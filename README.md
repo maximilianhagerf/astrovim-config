@@ -1,2 +1,3 @@
 # astrovim-config
-My personal Astro Vim configuration!
+
+## My personal Astro Vim configuration!
