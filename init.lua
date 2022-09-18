@@ -60,23 +60,6 @@ local config = {
   --   return local_vim
   -- end,
 
-  -- Set dashboard header
-  header = {
-    "                                         ,@@      ",
-    "                                    ,@@@@@@       ",
-    "       @                       ,@@@@@@            ",
-    "       @@@@@@             ,@@@@@@                 ",
-    "       @@@ @@@@@@@   .@@@@@@  @@@                 ",
-    "       @@@      @@@@@@@       @@@                 ",
-    "       @@@                    @@@                 ",
-    "       @@@                    @@@      @@@@@      ",
-    "       @@@                    @@@ @@@@@@@         ",
-    "       @@@                   @@@@@@@              ",
-    "                        @@@@@@@                   ",
-    "                   @@@@@@@                        ",
-    "                   @@                             ",
-  },
-
   -- Default theme configuration
   default_theme = {
     -- set the highlight style for diagnostic messages
