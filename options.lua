@@ -6,7 +6,7 @@
     g = {
       mapleader = " ", -- sets vim.g.mapleader
     },
-  },
+  }
   -- If you need more control, you can use the function()...end notation
   -- options = function(local_vim)
   --   local_vim.opt.relativenumber = true
