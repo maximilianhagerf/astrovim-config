@@ -16,6 +16,10 @@ return {
     ["<C-ö>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Open Terminal" },
     ["<leader><leader>r"] = { ":AstroReload<cr>", desc = "Reload config" },
     ["<leader><leader>s"] = { ":let @/ = \"\"<cr>", desc = "Clear search selection" },
+    ["å"] = { "%", desc = "Maps å to %" },
+    ["ä"] = { "$", desc = "Maps ä to $" },
+    ["ö"] = { "^", desc = "Maps ö to ^" },
+    ["§"] = { ":", desc = "Maps § to :" },
   },
   t = {
     -- setting a mapping to false will disable it
