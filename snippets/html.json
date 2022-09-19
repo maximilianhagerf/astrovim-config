@@ -1,0 +1,17 @@
+{
+  "setup": {
+    "prefix": ["html simple"],
+    "body": [
+      "<!DOCTYPE html>",
+      "<html>",
+      "\t<head>",
+      "\t</head>",
+      "\t<body>",
+      "\t\t$1",
+      "\t</body>",
+      "</html>",
+      ""
+    ],
+    "description": "HTML 5 boilerplate."
+  }
+}
