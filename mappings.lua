@@ -15,6 +15,7 @@ return {
     ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
     ["<C-ö>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Open Terminal" },
     ["<leader><leader>r"] = { ":AstroReload<cr>", desc = "Reload config" },
+    ["<leader><leader>s"] = { ":let @/ = \"\"<cr>", desc = "Clear search selection" },
   },
   t = {
     -- setting a mapping to false will disable it
