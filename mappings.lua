@@ -20,6 +20,8 @@ return {
     ["ä"] = { "$", desc = "Maps ä to $" },
     ["ö"] = { "^", desc = "Maps ö to ^" },
     ["§"] = { ":", desc = "Maps § to :" },
+    ["<leader>k"] = { "<cmd>m-2<cr>", desc = "Move line up" },
+    ["<leader>j"] = { "<cmd>m+1<cr>", desc = "Move line down" },
   },
   t = {
     -- setting a mapping to false will disable it
