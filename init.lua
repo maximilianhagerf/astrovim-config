@@ -95,7 +95,7 @@ local config = {
     -- end,
 
     -- Add overrides for LSP server settings, the keys are the name of the server
-    ["server-settings"] = {
+    -- ["server-settings"] = {
       -- example for addings schemas to yamlls
       -- yamlls = { -- override table for require("lspconfig").yamlls.setup({...})
       --   settings = {
@@ -114,7 +114,7 @@ local config = {
       --     client.resolved_capabilities.document_formatting = false
       --   end
       -- }
-    },
+    -- },
   },
 
   -- CMP Source Priorities
