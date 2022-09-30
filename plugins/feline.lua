@@ -1,10 +1,5 @@
 local vi_mode = require('feline.providers.vi_mode')
 
---
--- 1. define some constants
---
-
--- left and right constants (first and second items of the components array)
 local LEFT = 1
 local RIGHT = 2
 
@@ -80,17 +75,6 @@ local function get_filetype()
     filetype = '[no type]'
   end
   return filetype:lower()
-end
-
---- get the cursor's line
-local function get_line_cursor()
-  local cursor_line, _ = unpack(vim.api.nvim_win_get_cursor(0))
-  return cursor_line
-end
-
---- get the file's total number of lines
-local function get_line_total()
-  return vim.api.nvim_buf_line_count(0)
 end
 
 --- wrap a string with whitespaces
