@@ -6,6 +6,9 @@
 
 return {
   -- first key is the mode
+  i = {
+    -- ["jj"] = { "<Esc> l", desc = "Move line down" },
+  },
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
@@ -22,6 +25,11 @@ return {
     ["§"] = { ":", desc = "Maps § to :" },
     ["<leader>k"] = { "<cmd>m-2<cr>", desc = "Move line up" },
     ["<leader>j"] = { "<cmd>m+1<cr>", desc = "Move line down" },
+  },
+  v = {
+    ["å"] = { "%", desc = "Maps å to %" },
+    ["ä"] = { "$", desc = "Maps ä to $" },
+    ["ö"] = { "^", desc = "Maps ö to ^" },
   },
   t = {
     -- setting a mapping to false will disable it
