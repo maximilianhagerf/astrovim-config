@@ -39,33 +39,48 @@ local SPACEDUCK = {
   yellow = '#fabd2f',
 }
 
-local GRUVBOX = {
-  fg = '#ebdbb2',
-  bg = '#3c3836',
-  black = '#3c3836',
-  skyblue = '#83a598',
-  cyan = '#8e07c',
-  green = '#b8bb26',
-  oceanblue = '#076678',
-  blue = '#458588',
-  magenta = '#d3869b',
-  orange = '#d65d0e',
-  red = '#fb4934',
-  violet = '#b16286',
-  white = '#ebdbb2',
-  yellow = '#fabd2f',
-}
+-- local GRUVBOX = {
+--   fg = '#ebdbb2',
+--   bg = '#3c3836',
+--   black = '#3c3836',
+--   skyblue = '#83a598',
+--   cyan = '#8e07c',
+--   green = '#b8bb26',
+--   oceanblue = '#076678',
+--   blue = '#458588',
+--   magenta = '#d3869b',
+--   orange = '#d65d0e',
+--   red = '#fb4934',
+--   violet = '#b16286',
+--   white = '#ebdbb2',
+--   yellow = '#fabd2f',
+-- }
 
 --- get the current buffer's file name, defaults to '[no name]'
 local function get_filename()
   local filename = vim.api.nvim_buf_get_name(0)
+  local filetype = vim.bo.filetype
+
   if filename == '' then
-    filename = '[no name]'
+    if filetype == 'aerial' then
+      filename = 'Aerial'
+    else
+      filename = 'I\'m nameless'
+    end
+  else
+    filename = vim.fn.fnamemodify(filename, ':~:.')
+    if filename == 'neo-tree filesystem [1]' then
+      filename = 'Neo Tree'
+    end
+    if filetype == 'toggleterm' then
+      filename = 'type "exit" to quit'
+    end
   end
   -- this is some vim magic to remove the current working directory path
   -- from the absilute path of the filename in order to make the filename
   -- relative to the current working directory
-  return vim.fn.fnamemodify(filename, ':~:.')
+  -- return vim.fn.fnamemodify(filename, ':~:.')
+  return filename
 end
 
 --- get the current buffer's file type, defaults to '[not type]'
@@ -147,9 +162,15 @@ table.insert(components.active[LEFT], {
   -- hl needs to be a local function to avoid calling get_mode_color
   -- before feline initiation
   hl = function()
+    local text_color = 'black'
+    if vi_mode.get_vim_mode() == "INSERT"
+    then
+      text_color = 'white'
+    end
     return {
-      fg = 'black',
+      fg = text_color,
       bg = vi_mode.get_mode_color(),
+      -- style = 'bold',
     }
   end,
 })
@@ -189,14 +210,35 @@ table.insert(components.active[RIGHT], {
   },
 })
 
+-- INACTIVE SECTION
+table.insert(components.inactive[LEFT], {
+  name = 'mode',
+  provider = wrapped_provider(provide_mode, wrap),
+  right_sep = 'slant_right',
+  -- hl needs to be a local function to avoid calling get_mode_color
+  -- before feline initiation
+  hl = function()
+    local text_color = 'black'
+    if vi_mode.get_vim_mode() == "INSERT"
+    then
+      text_color = 'white'
+    end
+    return {
+      fg = text_color,
+      bg = vi_mode.get_mode_color(),
+      -- style = 'bold',
+    }
+  end,
+})
+
 -- insert the inactive filename component at the beginning of the left section
 table.insert(components.inactive[LEFT], {
   name = 'filename_inactive',
-  provider = wrapped_provider(provide_filename, wrap),
+  provider = wrapped_provider(provide_filename, wrap_left),
   right_sep = 'slant_right',
   hl = {
-    fg = 'white',
-    bg = 'bg',
+    bg = 'white',
+    fg = 'black',
   },
 })
 
@@ -205,6 +247,8 @@ table.insert(components.inactive[LEFT], {
 --
 
 return {
+  force_inactive = { filetypes = {"^neo%-tree$", "^NvimTree$",  "^aerial$", "^toggleterm$" } },
+  disable = { filetypes = {"^dashboard$", "^Outline$"} },
   theme = SPACEDUCK,
   components = components,
   vi_mode_colors = MODE_COLORS,
