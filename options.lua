@@ -2,6 +2,16 @@
   return {
     opt = {
       relativenumber = true, -- sets vim.opt.relativenumber
+      fillchars = { 
+        eob = " ", 
+        horiz = " ",
+        horizup = " ",
+        horizdown = " ",
+        vert = " ",
+        vertleft = " ",
+        vertright = " ",
+        verthoriz = " "
+      }, -- Disable `~` on nonexistent lines
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
