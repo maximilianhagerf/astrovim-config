@@ -7,22 +7,22 @@ return {
   enable_diagnostics = false,
   default_component_configs = {
     indent = {
-      indent_size = 2,
+      indent_size = 1,
       padding = 0,
       with_markers = true,
-      indent_marker = "│",
-      last_indent_marker = "└",
+      indent_marker = " ",
+      last_indent_marker = " ",
       highlight = "NeoTreeIndentMarker",
       with_expanders = false,
-      expander_collapsed = "",
-      expander_expanded = "",
+      expander_collapsed = "",
+      expander_expanded = "",
       expander_highlight = "NeoTreeExpander",
     },
     icon = {
-      folder_closed = "",
-      folder_open = "",
-      folder_empty = "",
-      default = "",
+      folder_closed = "",
+      folder_open = "",
+      folder_empty = "",
+      default = " ",
     },
     name = {
       trailing_slash = false,
@@ -44,7 +44,7 @@ return {
   },
   window = {
     position = "right",
-    width = 30,
+    width = 40,
     mappings = {
       ["<2-LeftMouse>"] = "open",
       ["<cr>"] = "open",
