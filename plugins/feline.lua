@@ -100,13 +100,13 @@ end
 --- wrap a string with whitespaces and add a '' on the left,
 -- use on left section components for a nice  transition
 local function wrap_left(string)
-  return ' ' .. string .. ' '
+  return ' ' .. string .. ' '
 end
 
 --- wrap a string with whitespaces and add a '' on the right,
 -- use on left section components for a nice  transition
 local function wrap_right(string)
-  return ' ' .. string .. ' '
+  return ' ' .. string .. ' '
 end
 
 --- decorate a provider with a wrapper function
@@ -158,7 +158,7 @@ local components = {
 table.insert(components.active[LEFT], {
   name = 'mode',
   provider = wrapped_provider(provide_mode, wrap),
-  right_sep = 'slant_right',
+  right_sep = '',
   -- hl needs to be a local function to avoid calling get_mode_color
   -- before feline initiation
   hl = function()
@@ -170,7 +170,7 @@ table.insert(components.active[LEFT], {
     return {
       fg = text_color,
       bg = vi_mode.get_mode_color(),
-      -- style = 'bold',
+      style = 'bold',
     }
   end,
 })
@@ -179,7 +179,7 @@ table.insert(components.active[LEFT], {
 table.insert(components.active[LEFT], {
   name = 'filename',
   provider = wrapped_provider(provide_filename, wrap_left),
-  right_sep = 'slant_right',
+  right_sep = ' ',
   hl = {
     bg = 'white',
     fg = 'black',
@@ -190,7 +190,7 @@ table.insert(components.active[LEFT], {
 table.insert(components.active[RIGHT], {
   name = 'filetype',
   provider = wrapped_provider(provide_filetype, wrap_right),
-  left_sep = 'slant_left',
+  left_sep = ' ',
   hl = {
     bg = 'white',
     fg = 'black',
@@ -201,12 +201,13 @@ table.insert(components.active[RIGHT], {
 table.insert(components.active[RIGHT], {
   name = 'gitBranch',
   provider = 'git_branch',
-  left_sep = 'slant_left',
+  left_sep = '',
   right_sep = 'block',
   icon = " ",
   hl = {
     bg = 'green',
     fg = 'black',
+    style = 'bold',
   },
 })
 
@@ -214,7 +215,7 @@ table.insert(components.active[RIGHT], {
 table.insert(components.inactive[LEFT], {
   name = 'mode',
   provider = wrapped_provider(provide_mode, wrap),
-  right_sep = 'slant_right',
+  right_sep = '',
   -- hl needs to be a local function to avoid calling get_mode_color
   -- before feline initiation
   hl = function()
@@ -226,7 +227,7 @@ table.insert(components.inactive[LEFT], {
     return {
       fg = text_color,
       bg = vi_mode.get_mode_color(),
-      -- style = 'bold',
+      style = 'bold',
     }
   end,
 })
@@ -235,7 +236,7 @@ table.insert(components.inactive[LEFT], {
 table.insert(components.inactive[LEFT], {
   name = 'filename_inactive',
   provider = wrapped_provider(provide_filename, wrap_left),
-  right_sep = 'slant_right',
+  right_sep = ' ',
   hl = {
     bg = 'white',
     fg = 'black',
