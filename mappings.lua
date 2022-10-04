@@ -19,6 +19,7 @@ return {
     ["<C-ö>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Open Terminal" },
     ["<leader><leader>r"] = { ":AstroReload<cr>", desc = "Reload config" },
     ["<leader><leader>s"] = { ":let @/ = \"\"<cr>", desc = "Clear search selection" },
+    ["<leader><leader>f"] = { ":lua vim.lsp.buf.formatting_sync(nil, 10000)<cr>", desc = "Format Document" },
     ["å"] = { "%", desc = "Maps å to %" },
     ["ä"] = { "$", desc = "Maps ä to $" },
     ["ö"] = { "^", desc = "Maps ö to ^" },
