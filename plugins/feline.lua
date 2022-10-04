@@ -23,7 +23,8 @@ local MODE_COLORS = {
 }
 
 local SPACEDUCK = {
-  fg = '#ebdbb2',
+  -- fg = '#ebdbb2',
+  fg = '#30365f',
   bg = '#0f111b',
   black = '#0f111b',
   skyblue = '#00a3cc',
@@ -35,26 +36,10 @@ local SPACEDUCK = {
   orange = '#e39400',
   red = '#e33400',
   violet = '#b3a1e6',
-  white = '#ebdbb2',
+  white = '#30365f',
+  -- white = '#ebdbb2',
   yellow = '#fabd2f',
 }
-
--- local GRUVBOX = {
---   fg = '#ebdbb2',
---   bg = '#3c3836',
---   black = '#3c3836',
---   skyblue = '#83a598',
---   cyan = '#8e07c',
---   green = '#b8bb26',
---   oceanblue = '#076678',
---   blue = '#458588',
---   magenta = '#d3869b',
---   orange = '#d65d0e',
---   red = '#fb4934',
---   violet = '#b16286',
---   white = '#ebdbb2',
---   yellow = '#fabd2f',
--- }
 
 --- get the current buffer's file name, defaults to '[no name]'
 local function get_filename()
@@ -182,7 +167,7 @@ table.insert(components.active[LEFT], {
   right_sep = ' ',
   hl = {
     bg = 'white',
-    fg = 'black',
+    fg = 'skyblue',
   },
 })
 
@@ -193,7 +178,7 @@ table.insert(components.active[RIGHT], {
   left_sep = ' ',
   hl = {
     bg = 'white',
-    fg = 'black',
+    fg = 'skyblue',
   },
 })
 
@@ -239,7 +224,7 @@ table.insert(components.inactive[LEFT], {
   right_sep = ' ',
   hl = {
     bg = 'white',
-    fg = 'black',
+    fg = 'skyblue',
   },
 })
 
