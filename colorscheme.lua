@@ -1,3 +1,2 @@
 -- Set colorscheme to use
-return "spaceduck"
--- return "material"
+return "default_theme"
